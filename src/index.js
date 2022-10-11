@@ -14,9 +14,12 @@ const formFields = {
 };
 
 // Fill in fields
-Object.entries(formFields).forEach(([name, value]) => {
-  document.querySelector(`input[name="${name}"]`).value = value;
-});
+Object.entries(formFields).map(([name, value]) => {
+  const input = document.querySelector(`input[name="${name}"]`)
+  input.value = value;
+  input.focus();
+  input.blur();
+}).reduce((p, f) => p.then(f), Promise.resolve());
 
 // Submit Form
 // const submitButton = document.querySelector("button[type='submit']");
