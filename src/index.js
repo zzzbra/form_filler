@@ -39,6 +39,7 @@ class FormFiller {
       }
     ];
     FormFiller._instance = this;
+    // TODO: also set on localStorage so works across multi-domain onboarding
   }
 
   fillForm () {
